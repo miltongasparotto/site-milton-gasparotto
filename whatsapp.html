@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Abrindo WhatsApp...</title>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1103657205336398');
+fbq('track', 'PageView');
+</script>
+<style>
+body{font-family:system-ui,sans-serif;background:#0f1115;color:#f2f2f2;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;text-align:center;padding:24px}
+a{display:inline-block;margin-top:16px;padding:14px 26px;background:#25d366;color:#062b12;border-radius:10px;font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<div>
+<p>Abrindo o WhatsApp do Milton...</p>
+<a id="go" href="#">Abrir WhatsApp</a>
+</div>
+<script>
+(function(){
+  var src=((new URLSearchParams(location.search)).get('src')||'form').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,30);
+  var msg='Olá Milton! Preenchi o formulário da consultoria online. [origem: '+src+']';
+  var url='https://wa.me/5544991723451?text='+encodeURIComponent(msg);
+  document.getElementById('go').href=url;
+  var done=false;
+  function go(){ if(done)return; done=true; location.replace(url); }
+  try{ fbq('track','Contact',{content_name:'Formulario instantaneo - '+src}); }catch(e){}
+  setTimeout(go,900);
+})();
+</script>
+</body>
+</html>
